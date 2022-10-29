@@ -5,7 +5,9 @@ services:
     platform: linux/x86_64
     container_name: postgres
     image: localdev/postgres
-    build: .
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile
     ports:
       - 5432:5432
     volumes:

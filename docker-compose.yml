@@ -8,13 +8,11 @@ services:
     build: .
     ports:
       - 5432:5432
-    volumes:
-      - db-store:/var/lib/postgresql/data
-      - ./script:/docker-entrypoint-initdb.d
-      - ./config/postgresql.conf:/etc/postgresql/postgresql.conf
+    # volumes:
+    #   - db-store:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=password
     command: -c 'config_file=/etc/postgresql/postgresql.conf'
 
-volumes:
-  db-store:
+# volumes:
+#   db-store:
