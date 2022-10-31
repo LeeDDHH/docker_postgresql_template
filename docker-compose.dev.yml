@@ -16,6 +16,7 @@ services:
       - ./config/postgresql.conf:/etc/postgresql/postgresql.conf
     environment:
       - POSTGRES_PASSWORD=password
+      - TZ='Asia/Tokyo'
     command: -c 'config_file=/etc/postgresql/postgresql.conf'
 
 volumes:
